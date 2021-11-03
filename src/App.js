@@ -32,7 +32,7 @@ function App() {
 
 
   return (
-    <div className="appp">
+    <div className="appDiv">
       <Navbar />
       <Body />
       {/* {console.log(state.listsss)} */}

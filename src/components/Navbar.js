@@ -33,7 +33,7 @@ function Navbar(){
     return <div className="navbarDiv">
             <MenuIcon className="MUI_icon" color="info" fontSize="large" />
             <div>
-                <TextField onChange={(e)=>{inputText = e.target.value}} size="small" id="outlined-basic" label="Outlined" variant="outlined" />
+                <TextField onChange={(e)=>{inputText = e.target.value}} size="small" id="outlined-basic" label="Search" variant="outlined" />
                 <button onClick={AapplySearchBar} ><SearchIcon/></button>
             </div>
             <div> icons</div>

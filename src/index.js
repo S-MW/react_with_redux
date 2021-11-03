@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// import the following to create routing
+import { BrowserRouter, Route } from "react-router-dom";
 // import provider
 import { Provider } from "react-redux";
 // import store
@@ -12,7 +14,9 @@ import store from "./reducers/store"
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <BrowserRouter>
+        <Route path="/" component={App} />
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

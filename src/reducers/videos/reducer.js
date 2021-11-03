@@ -9,6 +9,8 @@ const videosReducer = (state = initialState, {type , payload}) => {
         case "SET_VIDEOS":
             return{
                 videos:payload,
+                // هنا نرجع القيمة القديمة , بدال ما في كل مره يصفرها لو كان فيها قيمة
+                // watchLater: state.watchLater, 
             }
             break;
     
