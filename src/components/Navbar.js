@@ -19,7 +19,7 @@ function Navbar(){
     let inputText =""
 
     const AapplySearchBar = ()=>{
-            let API_KEY = "AIzaSyDZ7Yl2nzKPmfVwPDb3y4YtafVf_SwqD1w"
+            let API_KEY = "AIzaSyD4iZQm8xoQ3MgyuKY-W4drJOMcNxEMJkI"
             
                 axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${inputText}&key=${API_KEY}`)
                 .then((response)=>{

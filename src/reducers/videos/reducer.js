@@ -1,6 +1,6 @@
 const initialState = {
     videos: [],
-    // watchLater : []
+    watchLater : []
 };
 
 const videosReducer = (state = initialState, {type , payload}) => {
@@ -9,8 +9,17 @@ const videosReducer = (state = initialState, {type , payload}) => {
         case "SET_VIDEOS":
             return{
                 videos:payload,
+                watchLater: state.watchLater,
                 // هنا نرجع القيمة القديمة , بدال ما في كل مره يصفرها لو كان فيها قيمة
                 // watchLater: state.watchLater, 
+            }
+            break;
+        case "SET_WATCH_LATER":
+            const array = state.watchLater.slice()
+            array.push(payload)
+            return{
+                videos:state.videos,
+                watchLater:array,
             }
             break;
     

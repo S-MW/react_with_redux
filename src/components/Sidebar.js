@@ -1,7 +1,10 @@
+import { useHistory } from "react-router-dom";
+
 import HomeIcon from '@mui/icons-material/Home';
 import ExploreIcon from '@mui/icons-material/Explore';
-import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
-import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
+import WatchLaterIcon from '@mui/icons-material/WatchLater';
+// import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
+// import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
 
 import "./Sidebar.css"
 
@@ -9,11 +12,22 @@ import "./Sidebar.css"
 
 function Sidebar(){
 
+    const history = useHistory();
+
+    const showWatchLaterVideos = ()=>{
+        // console.log("showWatchLaterVideos")
+        // history.push("Watch-Later-Videos")  
+        history.replace("/Watch-Later-Videos")  
+    }
+
+    const showHome = ()=>{
+        history.replace("/")  
+    }
+
     return <div className="sidenav">
-    <a href="#about"><HomeIcon fontSize="large"/></a>
-    <a href="#services"><ExploreIcon fontSize="large"/></a>
-    <a href="#clients"><SubscriptionsIcon fontSize="large"/></a>
-    <a href="#contact"><VideoLibraryIcon fontSize="large"/></a>
+    <a onClick={showHome}><HomeIcon fontSize="large"/></a>
+    <a><ExploreIcon fontSize="large"/></a>
+    <a onClick={showWatchLaterVideos}><WatchLaterIcon fontSize="large"/></a>
     </div>
         
 }

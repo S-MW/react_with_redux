@@ -11,18 +11,18 @@ function VidieCard()
 
     const state = useSelector((state) =>{
     return{
-        listsss:state.videosReducer.videos,
+        VideosList:state.videosReducer.videos,
     }
     });
 
     const showDetails = (e)=>{
         console.log(e.target.id)
-        history.push(`/VideoDetails/${e.target.id}`)        
+        history.push(`/Video-Details/${e.target.id}`)          
     }
 
     
     const showVideos = ()=>{
-        return state.listsss.map((element, index)=>{
+        return state.VideosList.map((element, index)=>{
                 return <div  className="grid-item">
                                 <img width="100%" src={element.snippet.thumbnails.medium["url"]} />
                                 <p>{element.snippet["title"]}</p>
@@ -34,7 +34,7 @@ function VidieCard()
 
 
     return <div className="grid-container">
-            {console.log(state.listsss)}
+            {console.log(state.VideosList)}
             {showVideos()}
             </div>
 }
