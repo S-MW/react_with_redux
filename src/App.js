@@ -19,7 +19,7 @@ function App() {
   });
 
 
-  let API_KEY = "AIzaSyD4iZQm8xoQ3MgyuKY-W4drJOMcNxEMJkI"
+  let API_KEY = "AIzaSyAYivC7LcSkUkzdmaGWoZs1dESsx42-htk"
   useEffect(()=>{
     axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&chart=mostPopular&key=${API_KEY}`)
     .then((response)=>{

@@ -26,7 +26,6 @@ function Sidebar(){
 
     return <div className="sidenav">
     <a onClick={showHome}><HomeIcon fontSize="large"/></a>
-    <a><ExploreIcon fontSize="large"/></a>
     <a onClick={showWatchLaterVideos}><WatchLaterIcon fontSize="large"/></a>
     </div>
         

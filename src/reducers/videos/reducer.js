@@ -22,6 +22,17 @@ const videosReducer = (state = initialState, {type , payload}) => {
                 watchLater:array,
             }
             break;
+        case "DELETE_VIDEO":
+            return{
+                videos:state.videos,
+                watchLater:state.watchLater.filter((element)=>{
+                    if(element.id !== payload)
+                    {
+                        return element;
+                    }
+                }),
+            }
+            break;
     
         default:
             return state;

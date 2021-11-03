@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 
+import { Redirect } from "react-router-dom";
 import {useParams} from 'react-router-dom'
 import { useHistory } from "react-router-dom";
 import { setWatchLater } from "../reducers/videos/actions";
@@ -16,11 +17,11 @@ function VideoDetails(){
     const {id} = useParams()
     const [videoObject, setVideoObject] = useState()
 
-    let API_KEY = "AIzaSyDZ7Yl2nzKPmfVwPDb3y4YtafVf_SwqD1w"
+    let API_KEY = "AIzaSyAYivC7LcSkUkzdmaGWoZs1dESsx42-htk"
     useEffect(()=>{
         axios.get(`https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${id}&key=${API_KEY}`)
         .then((response)=>{
-            setVideoObject(response.data.items[0].snippet)
+            setVideoObject(response.data.items[0])
         })
         .catch((err)=>console.log(err))
     },[])
@@ -28,6 +29,7 @@ function VideoDetails(){
 
     const addTowatchLater = ()=>{
         dispatch(setWatchLater(videoObject))
+        history.replace("/Watch-Later-Videos")
     }
 
 

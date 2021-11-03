@@ -12,3 +12,10 @@ export const setWatchLater = (video)=> {
         payload:video
     };
 };
+
+export const deleteVideo = (videoId) => {
+    return {
+        type:"DELETE_VIDEO",
+        payload:videoId
+    }
+}
