@@ -1,0 +1,15 @@
+.navbarDiv{
+    
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items:center;
+        background-color:#e0dcdc;
+        width: 100%;
+        height: 56px;
+    
+}
+
+.MUI_icon{
+    margin-left: 20px;
+}

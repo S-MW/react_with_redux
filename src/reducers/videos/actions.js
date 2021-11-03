@@ -1,7 +1,7 @@
 // !!!!!!!!!! this is test action !!!!!!!!!!
-export const setVideos = ()=> {
+export const setVideos = (videosList)=> {
     return {
         type:"SET_VIDEOS",
-        payload:[{name:"saad", age:24},{name:"fahad", age:20}]
+        payload:videosList
     };
 };
