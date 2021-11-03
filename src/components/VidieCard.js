@@ -13,13 +13,18 @@ function VidieCard()
     }
     });
 
+    const showDetails = (e)=>{
+        console.log(e.target.id)
+
+    }
 
     
     const showVideos = ()=>{
         return state.listsss.map((element, index)=>{
-                return <div className="grid-item">
+                return <div  className="grid-item">
                                 <img width="100%" src={element.snippet.thumbnails.high["url"]} />
                                 <p>{element.snippet["title"]}</p>
+                                <button id={element.id["videoId"]} onClick={showDetails}>Show Details</button>
                         </div>
         })
     }
