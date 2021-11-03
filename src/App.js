@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setVideos } from "./reducers/videos/actions";
 
 import Navbar from "./components/Navbar";
+import Body from "./components/Body";
 
 import './App.css';
 
@@ -19,20 +20,21 @@ function App() {
 
 
   let API_KEY = "AIzaSyDZ7Yl2nzKPmfVwPDb3y4YtafVf_SwqD1w"
-  // useEffect(()=>{
-  //   axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&chart=mostPopular&key=${API_KEY}`)
-  //   .then((response)=>{
-  //     // console.log(response)
-  //     dispatch(setVideos(response.data.items));
-  //   })
-  //   .catch((err)=>console.log(err))
-  // },[])
+  useEffect(()=>{
+    axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&chart=mostPopular&key=${API_KEY}`)
+    .then((response)=>{
+      // console.log(response)
+      dispatch(setVideos(response.data.items));
+    })
+    .catch((err)=>console.log(err))
+  },[])
 
 
 
   return (
     <div className="appp">
       <Navbar />
+      <Body />
       {/* {console.log(state.listsss)} */}
     </div>
   );
